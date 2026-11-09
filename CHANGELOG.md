@@ -1,17 +1,22 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.4.2] - 09/11/2026
+
+### Jerarquía Tipográfica en Pantalla de Resultados
+- **Cormorant Garamond en Encabezado y Cierre**:
+  - *"Tu monto de hoy"* y *"Plegarias procesadas con éxito"* actualizadas con la fuente serif `Cormorant Garamond`.
+  - Tamaño destacado idéntico y prominente (`clamp(22px, 3.2vh, 24px)`), con peso negrita (`700`) y color azul marino (`var(--ink)`), dándoles protagonismo simétrico arriba y abajo de la lista de oraciones sin saturar el espacio.
+
 ## [0.4.1] - 09/11/2026
 
 ### Mejoras Visuales en Selector de Exámenes
-- **Color Azul Inicial con Letras Blancas**: Fondo azul marino (`var(--ink)` / `#1f3350`) con letras blancas en tipografía serif `Cormorant Garamond` (la misma de las preguntas superiores).
-- **Estado Activo Dorado con Tilde Blanco**: Al marcarse, el fondo pasa a dorado (`var(--gold)`), el texto a azul marino, y el tilde de confirmación (`✓`) a blanco puro sobre círculo azul marino.
+- Color azul inicial (`var(--ink)`) con letras blancas en `Cormorant Garamond`.
+- Estado activo dorado con tilde blanco.
 
 ## [0.4.0] - 09/11/2026
 
 ### Añadido (Ayuda en Exámenes y Reglas de Base)
-- **Selector de Ayuda en Exámenes**: Añadido selector en `ConsumoView.jsx` con el texto *"¿Ocupas una ayuda en tus exámenes?"*, sin emojis.
-- **Intercesión Obligatoria de Santo Tomás de Aquino**: Al marcar la casilla, la 3ra oración devocional se fija obligatoriamente a Santo Tomás de Aquino y la ruleta frena en ella.
-- **Regla de Base de Consumo**: Mínimo de 1 café (no se permite 0) y base de 1 Padre Nuestro y 1 Ave María permanente.
+- Selector de exámenes sin emojis, Santo Tomás de Aquino obligatorio y base mínima de 1 Padre Nuestro y 1 Ave María.
 
 ## [0.3.0] - 08/11/2026
 

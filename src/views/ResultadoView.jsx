@@ -25,7 +25,7 @@ export default function ResultadoView({ lines, onRestart }) {
     <section className="view">
       <div className="mid">
         <Logo size={60} />
-        <p className="muted">Tu monto de hoy</p>
+        <h2 className="resultado-header serif">Tu monto de hoy</h2>
         <div className="monto-wrapper" ref={titleRef} tabIndex={-1}>
           <div className="oracion-list">
             {lines.map((l, i) => (
@@ -47,7 +47,7 @@ export default function ResultadoView({ lines, onRestart }) {
           </div>
           <p className="oracion-hint">Toca una oración para ver cómo se reza</p>
         </div>
-        <p className="muted oracion-footer">Plegarias procesadas con éxito</p>
+        <p className="resultado-footer serif">Plegarias procesadas con éxito</p>
       </div>
 
       <div className="actions">

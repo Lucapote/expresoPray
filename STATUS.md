@@ -4,13 +4,13 @@
 
 ## 1. Foto Actual
 - Proyecto Vite + React (`expresso-pray`).
-- Selector de ayuda para exámenes ([`ConsumoView.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/views/ConsumoView.jsx)) actualizado con los nuevos colores y tipografía:
-  - Estado desmarcado: fondo azul marino (`#1f3350`), letras blancas en tipografía serif `Cormorant Garamond`.
-  - Estado marcado: fondo dorado (`#e0b04a`), texto en azul marino, e indicador con tilde blanco (`#ffffff`).
+- Tipografía de encabezado y cierre actualizada en [`ResultadoView.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/views/ResultadoView.jsx):
+  - *"Tu monto de hoy"* y *"Plegarias procesadas con éxito"* utilizan la fuente serif destacada `Cormorant Garamond` en tamaño `22-24px`, negrita (`700`) y color azul marino (`#1f3350`), equilibrando el peso visual de la pantalla.
+- Selector de ayuda para exámenes en color azul marino con texto serif y estado activo dorado.
 - Compilación de producción limpia y verificada (`npm run build`).
 
 ## 2. En qué estamos trabajando ahora
-- Ajuste de colores y tipografía completado.
+- Ajuste tipográfico en la pantalla de resultados completado.
 
 ## 3. Próximos Pasos Inmediatos
-1. Validar en pantalla la interacción visual al marcar y desmarcar.
+1. El usuario revisará la pantalla de resultados para validar la nueva relevancia de los textos.
