@@ -20,16 +20,15 @@ function buildSide(s) {
     const L = 78 + i * 10;
     const up = 35 + i * 7;
     const down = 150 + i * 5;
-    rowA.push({ k: `A${s}${i}`, i, L, a0: s * up, a1: s * down });
-    rowB.push({ k: `B${s}${i}`, i, L: L * 0.72, a0: s * (up + 3.5), a1: s * (down + 2.5) });
-    rowC.push({ k: `C${s}${i}`, i, L: L * 0.45, a0: s * (up + 1.5), a1: s * (down + 1) });
+    rowA.push({ k: `A${s}${i}`, i, s, layer: 0, L, a0: s * up, a1: s * down });
+    rowB.push({ k: `B${s}${i}`, i, s, layer: 1, L: L * 0.72, a0: s * (up + 3.5), a1: s * (down + 2.5) });
+    rowC.push({ k: `C${s}${i}`, i, s, layer: 2, L: L * 0.45, a0: s * (up + 1.5), a1: s * (down + 1) });
   }
   return [...rowA, ...rowB, ...rowC];
 }
 
 export default function Wings() {
-  const leftFeathers = useMemo(() => buildSide(-1), []);
-  const rightFeathers = useMemo(() => buildSide(1), []);
+  const feathers = useMemo(() => [...buildSide(-1), ...buildSide(1)], []);
 
   return (
     <div className="wings">
@@ -49,32 +48,21 @@ export default function Wings() {
           </radialGradient>
         </defs>
         <circle className="halo" cx={SX} cy={SY} r="100" fill="url(#halo-gradient)" />
-
-        {/* Ala izquierda con perspectiva 3D */}
-        <g className="wing-side wing-left">
-          {leftFeathers.map((f) => (
-            <g
-              key={f.k}
-              className="f"
-              style={{ '--a0': `${f.a0}deg`, '--a1': `${f.a1}deg`, '--i': f.i }}
-            >
-              <path className="fe" d={featherPath(f.L)} />
-            </g>
-          ))}
-        </g>
-
-        {/* Ala derecha con perspectiva 3D */}
-        <g className="wing-side wing-right">
-          {rightFeathers.map((f) => (
-            <g
-              key={f.k}
-              className="f"
-              style={{ '--a0': `${f.a0}deg`, '--a1': `${f.a1}deg`, '--i': f.i }}
-            >
-              <path className="fe" d={featherPath(f.L)} />
-            </g>
-          ))}
-        </g>
+        {feathers.map((f) => (
+          <g
+            key={f.k}
+            className="f"
+            style={{
+              '--a0': `${f.a0}deg`,
+              '--a1': `${f.a1}deg`,
+              '--i': f.i,
+              '--s': f.s,
+              '--l': f.layer,
+            }}
+          >
+            <path className="fe" d={featherPath(f.L)} />
+          </g>
+        ))}
       </svg>
     </div>
   );

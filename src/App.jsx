@@ -6,7 +6,7 @@ import { buildMonto } from './utils/monto.js';
 
 export default function App() {
   const [view, setView] = useState('consumo'); // 'consumo' | 'carga' | 'resultado'
-  const [consumo, setConsumo] = useState({ cafes: 1, pancitos: 1 });
+  const [consumo, setConsumo] = useState({ cafes: 1, pancitos: 1, tieneExamen: false });
   const [monto, setMonto] = useState(() => buildMonto(consumo));
 
   const handleDarGracias = () => {

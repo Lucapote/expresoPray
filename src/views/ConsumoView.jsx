@@ -27,6 +27,17 @@ export default function ConsumoView({ consumo, onChange, onSubmit }) {
           value={consumo.pancitos}
           onChange={(pancitos) => onChange({ ...consumo, pancitos })}
         />
+
+        <label className={`exam-toggle${consumo.tieneExamen ? ' active' : ''}`}>
+          <input
+            type="checkbox"
+            checked={Boolean(consumo.tieneExamen)}
+            onChange={(e) => onChange({ ...consumo, tieneExamen: e.target.checked })}
+          />
+          <span className="exam-icon" aria-hidden="true">🎓</span>
+          <span className="exam-text">¿Tienes un examen pronto?</span>
+          <span className="exam-check-indicator" aria-hidden="true" />
+        </label>
       </div>
 
       <button type="button" className="cta" onClick={onSubmit}>
