@@ -92,26 +92,26 @@ button:focus-visible { outline: 3px solid var(--gold-d); outline-offset: 3px; }
   display: flex;
   align-items: center;
   gap: 12px;
-  background: var(--card);
-  border: 1.5px solid var(--gold-d);
-  border-radius: 16px;
-  padding: 10px 16px;
+  background: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 20px;
+  padding: 10px 18px;
   max-width: 360px;
   width: 100%;
   cursor: pointer;
   user-select: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(31, 51, 80, 0.15);
   margin-top: 4px;
 }
 .exam-card:hover {
-  background: var(--hl);
-  border-color: var(--gold);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(31, 51, 80, 0.2);
 }
 .exam-card.active {
-  background: var(--hl);
-  border-color: var(--gold);
-  box-shadow: 0 3px 10px rgba(224, 176, 74, 0.25);
+  background: var(--gold);
+  border-color: var(--gold-d);
+  box-shadow: 0 4px 14px rgba(201, 151, 43, 0.35);
 }
 .exam-checkbox-input {
   position: absolute;
@@ -121,31 +121,35 @@ button:focus-visible { outline: 3px solid var(--gold-d); outline-offset: 3px; }
   height: 0;
 }
 .exam-check-circle {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  border: 2px solid var(--muted);
+  border: 2px solid rgba(255, 255, 255, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   color: transparent;
   background: transparent;
 }
 .exam-card.active .exam-check-circle {
-  background: var(--gold);
-  border-color: var(--gold-d);
-  color: #1f3350;
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #ffffff;
   transform: scale(1.05);
 }
 .exam-text {
-  font-family: 'Nunito', sans-serif;
-  font-size: 15px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--ink);
-  line-height: 1.25;
+  color: #ffffff;
+  line-height: 1.2;
   text-align: left;
+  transition: color 0.25s ease;
+}
+.exam-card.active .exam-text {
+  color: var(--ink);
 }
 .cta {
   width: 100%;

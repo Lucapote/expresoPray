@@ -4,17 +4,13 @@
 
 ## 1. Foto Actual
 - Proyecto Vite + React (`expresso-pray`).
-- Selector de ayuda para exámenes implementado en [`ConsumoView.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/views/ConsumoView.jsx):
-  - Pregunta: *"¿Ocupas una ayuda en tus exámenes?"*.
-  - Diseño sutil con borde dorado y casilla circular minimalista sin emojis.
-- Regla de consumo base en [`monto.js`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/utils/monto.js):
-  - Mínimo de 1 café (no baja a 0).
-  - Siempre base de 1 Padre Nuestro y 1 Ave María.
-  - Al marcar ayuda en exámenes, la 3ra oración es obligatoriamente **Santo Tomás de Aquino** y la ruleta frena en él.
-- Cero scroll conservado en mobile y compilación de producción exitosa (`npm run build`).
+- Selector de ayuda para exámenes ([`ConsumoView.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/views/ConsumoView.jsx)) actualizado con los nuevos colores y tipografía:
+  - Estado desmarcado: fondo azul marino (`#1f3350`), letras blancas en tipografía serif `Cormorant Garamond`.
+  - Estado marcado: fondo dorado (`#e0b04a`), texto en azul marino, e indicador con tilde blanco (`#ffffff`).
+- Compilación de producción limpia y verificada (`npm run build`).
 
 ## 2. En qué estamos trabajando ahora
-- Funcionalidad de ayuda en exámenes completada y probada.
+- Ajuste de colores y tipografía completado.
 
 ## 3. Próximos Pasos Inmediatos
-1. El usuario validará la experiencia y comportamiento en el navegador.
+1. Validar en pantalla la interacción visual al marcar y desmarcar.
