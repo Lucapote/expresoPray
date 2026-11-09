@@ -20,9 +20,9 @@ function buildSide(s) {
     const L = 78 + i * 10;
     const up = 35 + i * 7;
     const down = 150 + i * 5;
-    rowA.push({ k: `A${s}${i}`, i, s, layer: 0, L, a0: s * up, a1: s * down });
-    rowB.push({ k: `B${s}${i}`, i, s, layer: 1, L: L * 0.72, a0: s * (up + 3.5), a1: s * (down + 2.5) });
-    rowC.push({ k: `C${s}${i}`, i, s, layer: 2, L: L * 0.45, a0: s * (up + 1.5), a1: s * (down + 1) });
+    rowA.push({ k: `A${s}${i}`, i, L, a0: s * up, a1: s * down });
+    rowB.push({ k: `B${s}${i}`, i, L: L * 0.72, a0: s * (up + 3.5), a1: s * (down + 2.5) });
+    rowC.push({ k: `C${s}${i}`, i, L: L * 0.45, a0: s * (up + 1.5), a1: s * (down + 1) });
   }
   return [...rowA, ...rowB, ...rowC];
 }
@@ -52,13 +52,7 @@ export default function Wings() {
           <g
             key={f.k}
             className="f"
-            style={{
-              '--a0': `${f.a0}deg`,
-              '--a1': `${f.a1}deg`,
-              '--i': f.i,
-              '--s': f.s,
-              '--l': f.layer,
-            }}
+            style={{ '--a0': `${f.a0}deg`, '--a1': `${f.a1}deg`, '--i': f.i }}
           >
             <path className="fe" d={featherPath(f.L)} />
           </g>

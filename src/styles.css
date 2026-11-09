@@ -116,109 +116,14 @@ button:focus-visible { outline: 3px solid var(--gold-d); outline-offset: 3px; }
   justify-content: center;
 }
 
-/* Toggle examen universitario */
-.exam-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: var(--card);
-  border: 1.5px solid var(--gold-d);
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  user-select: none;
-  font-family: 'Nunito', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ink);
-  transition: all 0.2s;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  margin-top: 4px;
-}
-.exam-toggle input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-.exam-toggle:hover {
-  background: var(--hl);
-  border-color: var(--gold);
-}
-.exam-toggle.active {
-  background: var(--hl);
-  border-color: var(--gold);
-  box-shadow: 0 0 0 2px var(--gold);
-}
-.exam-icon { font-size: 18px; }
-.exam-text { font-size: 15px; }
-.exam-check-indicator {
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  border: 2px solid var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s;
-  background: var(--bg);
-}
-.exam-toggle.active .exam-check-indicator {
-  background: var(--ink);
-  border-color: var(--ink);
-}
-.exam-toggle.active .exam-check-indicator::after {
-  content: '✓';
-  color: var(--bg);
-  font-size: 13px;
-  font-weight: 900;
-}
-
-/* Alas: ciclo de 3.2 s = pose arriba (pausa) → barrido abajo → pausa → vuelve con perspectiva 3D */
-.wings {
-  perspective: 800px;
-  transform-style: preserve-3d;
-  animation: float 3.2s cubic-bezier(0.6, 0, 0.3, 1) infinite;
-}
-.wings svg {
-  overflow: visible;
-  transform-style: preserve-3d;
-}
-@keyframes float {
-  0%, 12% { transform: translateY(0) rotateX(0deg) scale(0.98); }
-  50%, 62% { transform: translateY(-22px) rotateX(6deg) scale(1.02); }
-  100% { transform: translateY(0) rotateX(0deg) scale(0.98); }
-}
-@keyframes sweep {
-  0%, 12% {
-    transform: rotate(var(--a0)) rotateY(calc(var(--s) * -8deg)) translateZ(calc(var(--l, 0) * -2px));
-  }
-  50%, 62% {
-    transform: rotate(var(--a1)) rotateY(calc(var(--s) * 15deg)) translateZ(calc(10px + var(--l, 0) * 4px));
-  }
-  100% {
-    transform: rotate(var(--a0)) rotateY(calc(var(--s) * -8deg)) translateZ(calc(var(--l, 0) * -2px));
-  }
-}
-@keyframes pulse {
-  0%, 12% { transform: scale(0.92); opacity: 0.55; }
-  50%, 62% { transform: scale(1.18); opacity: 0.95; }
-  100% { transform: scale(0.92); opacity: 0.55; }
-}
-.f {
-  transform-origin: 160px 90px;
-  transform-style: preserve-3d;
-  will-change: transform;
-  transform: rotate(var(--a0));
-  animation: sweep 3.2s cubic-bezier(0.6, 0, 0.3, 1) infinite;
-  animation-delay: calc(var(--i) * 0.055s);
-}
-.fe {
-  fill: var(--wing);
-  stroke: var(--wing-line);
-  stroke-width: 1.4;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
-}
+/* Alas: ciclo de 3.2 s = pose arriba (pausa) → barrido abajo → pausa → vuelve */
+.wings { animation: float 3.2s cubic-bezier(0.6, 0, 0.3, 1) infinite; }
+.wings svg { overflow: visible; }
+@keyframes float { 0%, 12% { transform: translateY(0); } 50%, 62% { transform: translateY(-22px); } 100% { transform: translateY(0); } }
+@keyframes sweep { 0%, 12% { transform: rotate(var(--a0)); } 50%, 62% { transform: rotate(var(--a1)); } 100% { transform: rotate(var(--a0)); } }
+@keyframes pulse { 0%, 12% { transform: scale(0.9); opacity: 0.5; } 50%, 62% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.5; } }
+.f { transform-origin: 160px 90px; transform: rotate(var(--a0)); animation: sweep 3.2s cubic-bezier(0.6, 0, 0.3, 1) infinite; animation-delay: calc(var(--i) * 0.06s); }
+.fe { fill: var(--wing); stroke: var(--wing-line); stroke-width: 1.4; }
 .halo { transform-origin: 160px 90px; animation: pulse 3.2s ease-in-out infinite; }
 
 /* Ruleta y progreso */

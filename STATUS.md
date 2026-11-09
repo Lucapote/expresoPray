@@ -1,21 +1,19 @@
 # Estado del Proyecto (STATUS.md)
 
-**Última actualización:** 09/11/2026
+**Última actualización:** 08/11/2026
 
 ## 1. Foto Actual
 - Proyecto Vite + React (`expresso-pray`).
-- Servidor dev activo en `http://localhost:5174/`.
-- Nueva funcionalidad universitaria implementada:
-  - Checkbox/toggle interactivo en [`ConsumoView.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/views/ConsumoView.jsx): *"¿Tienes un examen pronto? 🎓"*.
-  - En [`monto.js`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/utils/monto.js), si el checkbox está activo, la 3ra oración devocional se fija a **Santo Tomás de Aquino** (patrón de los estudiantes y de la sabiduría). Si está inactivo, se sortea entre las bendiciones devocionales.
-  - La ruleta frena en Santo Tomás de Aquino y en la pantalla de resultados se puede consultar el texto sagrado mediante el botón *"Leer 📖"*.
-- Animación de alas mejorada con **perspectiva 3D y profundidad**:
-  - Parámetros de capa `--l` y sentido de ala `--s` en [`Wings.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/components/Wings.jsx).
-  - Rotaciones volumétricas `rotateY(...)`, `rotateX(...)`, `translateZ(...)` y sombras suaves por pluma en [`styles.css`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/styles.css).
-- Compilación de producción exitosa en 2.34s (`npm run build`).
+- Servidor dev corriendo en `http://localhost:5174/`.
+- Resuelto el problema de scroll y salto de líneas en pantalla:
+  - Marco fijado a `height: 100dvh` con `overflow: hidden`, garantizando **0 scroll** en cualquier dispositivo móvil o pantalla.
+  - Tipografías armonizadas proporcionalmente con `clamp(...)` en títulos y textos en todas las vistas.
+  - Diseño de tarjetas devocionales de fila única en [`ResultadoView.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/views/ResultadoView.jsx): cada oración (incluso las largas como *San Miguel Arcángel*) se muestra en una sola línea elegante junto a su botón *"Leer 📖"*.
+  - Logo optimizado a 60px y espaciados dinámicos distribuidos limpiamente entre cabecera, contenido central y botones inferiores.
 
 ## 2. En qué estamos trabajando ahora
-- Funcionalidad de examen universitario y alas 3D completadas y listas para validación del usuario.
+- Ajuste de diseño, tipografía y eliminación de scroll completado.
+- Servidor activo para validación del usuario.
 
 ## 3. Próximos Pasos Inmediatos
-1. Probar en el navegador el flujo con y sin el check de examen marcado.
+1. El usuario revisará la vista en el navegador para comprobar el ajuste espacial y la ausencia de scroll.
