@@ -28,7 +28,8 @@ function buildSide(s) {
 }
 
 export default function Wings() {
-  const feathers = useMemo(() => [...buildSide(-1), ...buildSide(1)], []);
+  const leftFeathers = useMemo(() => buildSide(-1), []);
+  const rightFeathers = useMemo(() => buildSide(1), []);
 
   return (
     <div className="wings">
@@ -48,15 +49,32 @@ export default function Wings() {
           </radialGradient>
         </defs>
         <circle className="halo" cx={SX} cy={SY} r="100" fill="url(#halo-gradient)" />
-        {feathers.map((f) => (
-          <g
-            key={f.k}
-            className="f"
-            style={{ '--a0': `${f.a0}deg`, '--a1': `${f.a1}deg`, '--i': f.i }}
-          >
-            <path className="fe" d={featherPath(f.L)} />
-          </g>
-        ))}
+
+        {/* Ala izquierda con perspectiva 3D */}
+        <g className="wing-side wing-left">
+          {leftFeathers.map((f) => (
+            <g
+              key={f.k}
+              className="f"
+              style={{ '--a0': `${f.a0}deg`, '--a1': `${f.a1}deg`, '--i': f.i }}
+            >
+              <path className="fe" d={featherPath(f.L)} />
+            </g>
+          ))}
+        </g>
+
+        {/* Ala derecha con perspectiva 3D */}
+        <g className="wing-side wing-right">
+          {rightFeathers.map((f) => (
+            <g
+              key={f.k}
+              className="f"
+              style={{ '--a0': `${f.a0}deg`, '--a1': `${f.a1}deg`, '--i': f.i }}
+            >
+              <path className="fe" d={featherPath(f.L)} />
+            </g>
+          ))}
+        </g>
       </svg>
     </div>
   );
