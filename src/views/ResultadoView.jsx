@@ -24,7 +24,7 @@ export default function ResultadoView({ lines, onRestart }) {
   return (
     <section className="view">
       <div className="mid">
-        <Logo size={96} />
+        <Logo size={60} />
         <p className="muted">Tu monto de hoy</p>
         <div className="monto-wrapper" ref={titleRef} tabIndex={-1}>
           <div className="oracion-list">
@@ -36,24 +36,28 @@ export default function ResultadoView({ lines, onRestart }) {
                 onClick={() => setSelectedOracion({ key: l.label, qty: l.qty })}
                 title={`Toca para leer la oración de ${l.label}`}
               >
-                {i > 0 && <span className="oracion-plus">+ </span>}
-                <span className="oracion-qty">{l.qty}</span>
-                <span className="oracion-name">{l.label}</span>
+                <div className="oracion-left">
+                  {i > 0 && <span className="oracion-plus">+ </span>}
+                  <span className="oracion-qty">{l.qty}</span>
+                  <span className="oracion-name">{l.label}</span>
+                </div>
                 <span className="oracion-pill">Leer 📖</span>
               </button>
             ))}
           </div>
           <p className="oracion-hint">Toca una oración para ver cómo se reza</p>
         </div>
-        <p className="muted">Plegarias procesadas con éxito</p>
+        <p className="muted oracion-footer">Plegarias procesadas con éxito</p>
       </div>
 
-      <button type="button" className="cta" onClick={handleReview}>
-        Dejar tu reseña
-      </button>
-      <button type="button" className="ghost" onClick={onRestart}>
-        Volver a empezar
-      </button>
+      <div className="actions">
+        <button type="button" className="cta" onClick={handleReview}>
+          Dejar tu reseña
+        </button>
+        <button type="button" className="ghost" onClick={onRestart}>
+          Volver a empezar
+        </button>
+      </div>
 
       <div className={`toast${toast ? ' on' : ''}`} role="status">
         {toast ? 'Pronto: acá irá el link a la reseña' : ''}

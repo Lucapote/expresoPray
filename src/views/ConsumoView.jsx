@@ -18,7 +18,7 @@ export default function ConsumoView({ consumo, onChange, onSubmit }) {
           onChange={(cafes) => onChange({ ...consumo, cafes })}
         />
 
-        <h2 id="q-pancitos" style={{ marginTop: 20 }}>
+        <h2 id="q-pancitos">
           ¿Cuántos pancitos comiste?
         </h2>
         <Stepper
