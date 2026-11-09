@@ -14,8 +14,9 @@ export default function ConsumoView({ consumo, onChange, onSubmit }) {
         <Stepper
           labelId="q-cafes"
           noun="cafés"
-          value={consumo.cafes}
-          onChange={(cafes) => onChange({ ...consumo, cafes })}
+          min={1}
+          value={Math.max(1, consumo.cafes)}
+          onChange={(cafes) => onChange({ ...consumo, cafes: Math.max(1, cafes) })}
         />
 
         <h2 id="q-pancitos">
@@ -24,9 +25,31 @@ export default function ConsumoView({ consumo, onChange, onSubmit }) {
         <Stepper
           labelId="q-pancitos"
           noun="pancitos"
+          min={0}
           value={consumo.pancitos}
           onChange={(pancitos) => onChange({ ...consumo, pancitos })}
         />
+
+        <label className={`exam-card${consumo.ayudaExamenes ? ' active' : ''}`}>
+          <input
+            type="checkbox"
+            className="exam-checkbox-input"
+            checked={Boolean(consumo.ayudaExamenes)}
+            onChange={(e) => onChange({ ...consumo, ayudaExamenes: e.target.checked })}
+          />
+          <span className="exam-check-circle" aria-hidden="true">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+              <path
+                d="M1 5L4.5 8.5L11 1.5"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <span className="exam-text">¿Ocupas una ayuda en tus exámenes?</span>
+        </label>
       </div>
 
       <button type="button" className="cta" onClick={onSubmit}>

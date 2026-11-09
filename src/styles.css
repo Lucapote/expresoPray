@@ -86,6 +86,67 @@ button:focus-visible { outline: 3px solid var(--gold-d); outline-offset: 3px; }
 .step button { width: 44px; height: 44px; border-radius: 50%; font: 700 22px 'Nunito', sans-serif; cursor: pointer; border: 2px solid var(--ink); background: transparent; color: var(--ink); }
 .step button.plus { background: var(--ink); color: var(--bg); }
 .step output { font: 700 38px 'Cormorant Garamond', serif; min-width: 44px; text-align: center; }
+
+/* Selector de Ayuda en Exámenes (sin emojis) */
+.exam-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1.5px solid var(--gold-d);
+  border-radius: 16px;
+  padding: 10px 16px;
+  max-width: 360px;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  margin-top: 4px;
+}
+.exam-card:hover {
+  background: var(--hl);
+  border-color: var(--gold);
+}
+.exam-card.active {
+  background: var(--hl);
+  border-color: var(--gold);
+  box-shadow: 0 3px 10px rgba(224, 176, 74, 0.25);
+}
+.exam-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+.exam-check-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  color: transparent;
+  background: transparent;
+}
+.exam-card.active .exam-check-circle {
+  background: var(--gold);
+  border-color: var(--gold-d);
+  color: #1f3350;
+  transform: scale(1.05);
+}
+.exam-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  text-align: left;
+}
 .cta {
   width: 100%;
   min-height: 48px;

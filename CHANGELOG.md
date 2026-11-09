@@ -1,23 +1,29 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.4.0] - 09/11/2026
+
+### Añadido (Ayuda en Exámenes y Reglas de Base)
+- **Selector de Ayuda en Exámenes**: Añadido selector en `ConsumoView.jsx` con el texto *"¿Ocupas una ayuda en tus exámenes?"*, estilizado en tarjeta con borde dorado y casilla circular minimalista sin emojis.
+- **Intercesión Obligatoria de Santo Tomás de Aquino**: Al marcar la casilla, la 3ra oración devocional se fija obligatoriamente a Santo Tomás de Aquino y la ruleta frena en ella.
+- **Regla de Base de Consumo**:
+  - Fijado mínimo de 1 café (no se permite 0).
+  - De base se asigna siempre al menos 1 Padre Nuestro y 1 Ave María, sumando adicionales según cafés y pancitos.
+
 ## [0.3.0] - 08/11/2026
 
 ### Mejoras de Diseño y Ergonomía (Zero-Scroll & Armonización Tipográfica)
-- **Cero Scroll Global**: Fijado `.app` en `height: 100dvh` y `overflow: hidden`, asegurando que toda la interfaz quepa de forma natural en el viewport de cualquier dispositivo móvil sin barra de scroll vertical.
-- **Armonización de Fuentes**: Estandarizados los tamaños de título (`h2`) y texto base en todas las vistas mediante escalas fluidas con `clamp(...)`.
-- **Tarjetas de Oración de Fila Única**: Rediseñado el listado en `ResultadoView.jsx` con tarjetas compactas que mantienen `+ 1 San Miguel Arcángel` y el badge `Leer 📖` en una sola línea horizontal sin cortes abruptos.
-- **Distribución Espacial Equilibrada**: Reducción del logo a 60px y empaquetado de botones inferiores con `justify-content: space-between`.
+- Cero scroll global en `height: 100dvh` y `overflow: hidden`.
+- Tarjetas de oración de fila única compactas con botón "Leer 📖".
+- Armonización de tipografías con escalas fluidas `clamp(...)`.
 
 ## [0.2.0] - 08/11/2026
 
 ### Añadido
-- **3ra Oración Devocional Sorpresa**: Modificado el cálculo en `src/utils/monto.js` para sumar una bendición especial aleatoria (*San Miguel Arcángel*, *Santo Tomás de Aquino*, etc.).
-- **Ruleta con Suspenso**: Objetivo de la ruleta fijado en la 3ra oración aleatoria.
+- 3ra oración sorpresa aleatoria y ruleta con objetivo dinámico.
 
 ## [0.1.0] - 08/11/2026
 
 ### Añadido
-- Creación de archivos de control: `STATUS.md`, `CHANGELOG.md` y `.gitignore`.
-- Catálogo litúrgico en `src/data/oraciones.js` y modal de lectura `OracionModal.jsx`.
-- Corrección de ruleta anti-duplicados y halo circular continuo en `Wings.jsx`.
-- Remediación de seguridad npm (Vite 6.4.5 y esbuild ^0.25.0).
+- Base de dependencias segura (Vite 6.4.5 y esbuild ^0.25.0).
+- Catálogo devocional (`src/data/oraciones.js`) y modal de lectura (`OracionModal.jsx`).
+- Ruleta anti-duplicados y halo circular continuo sin cortes.
