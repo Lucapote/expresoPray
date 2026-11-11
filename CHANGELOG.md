@@ -1,16 +1,19 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.6.1] - 11/11/2026
+
+### Aumento de Tamaño y Nitidez del Logo
+- **Círculos Agrandados**:
+  - Pantalla de resultados aumentada a **125px** (destacando al ángel, la espada, las alas y la taza con nitidez).
+  - Cabecera aumentada a **64px**.
+- **Anti-aliasing y Nitidez**: Aplicado `transform: translateZ(0)` y `-webkit-backface-visibility: hidden` para evitar bordes dentados y renderizado pixelado al escalar.
+- **Calibración Cero Scroll**: Absorción del espacio vertical en los márgenes de `ResultadoView.jsx` para garantizar que la pantalla completa no requiera scroll en teléfonos móviles.
+
 ## [0.6.0] - 11/11/2026
 
 ### Migración a Playfair Display y Optimización CSS
-- **Tipografía Playfair Display**:
-  - Reemplazo completo de `Cormorant Garamond` por `Playfair Display`.
-  - **Navbar**: *"EXPRESSO AL CIELO"* en mayúsculas con `Playfair Display Black` (peso 900) e interletraje (`0.05em`) imitando el logotipo oficial.
-  - **Textos fuera del Navbar**: Preguntas, títulos de resultado, oraciones y números configurados en **`Playfair Display Medium (500)`** en color azul marino (`var(--ink)`), evitando peso bold para garantizar descanso visual y sofisticación editorial.
-- **Mayor Visibilidad del Logotipo**:
-  - Aumentadas las dimensiones a 54px en cabecera y 80px en resultados, con marco refinado que permite apreciar la espada y la taza de café sin recortes agresivos.
-- **Optimización y Refactorización de `styles.css`**:
-  - Código modular, limpio y DRY, eliminando duplicidades y preservando la arquitectura de cero scroll.
+- Reemplazo completo de `Cormorant Garamond` por `Playfair Display` (Black 900 en navbar, Medium 500 fuera de él).
+- Código modular, limpio y DRY en `styles.css`.
 
 ## [0.5.0] - 11/11/2026
 

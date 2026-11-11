@@ -5,7 +5,7 @@ export default function ConsumoView({ consumo, onChange, onSubmit }) {
   return (
     <section className="view">
       <div className="brand">
-        <Logo size={54} />
+        <Logo size={64} />
         <span className="brand-title">EXPRESSO AL CIELO</span>
       </div>
 
