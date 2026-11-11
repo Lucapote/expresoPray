@@ -61,6 +61,15 @@ button:focus-visible { outline: 3px solid var(--gold-d); outline-offset: 3px; }
   padding: clamp(14px, 2.5vh, 20px) 20px;
 }
 .brand { display: flex; align-items: center; gap: 10px; align-self: flex-start; font-size: 22px; }
+.brand-logo {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-d);
+  box-shadow: 0 2px 8px rgba(201, 151, 43, 0.2);
+  background: var(--card);
+  flex-shrink: 0;
+  display: inline-block;
+}
 .mid {
   flex: 1;
   display: flex;

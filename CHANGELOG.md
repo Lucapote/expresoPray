@@ -1,11 +1,16 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.5.0] - 11/11/2026
+
+### Integración de Logo Oficial
+- **Reemplazo en `Logo.jsx`**: Incorporación de `public/logo.webp` en sustitución del marcador SVG provisional.
+- **Enmarcado Circular con Aro Dorado**: Estilo `.brand-logo` con `border-radius: 50%`, `object-fit: cover`, borde perimetral dorado (`border: 2px solid var(--gold-d)`) y leve sombra de realce.
+- **Favicon**: Añadido enlace a `/logo.webp` en `index.html`.
+
 ## [0.4.2] - 09/11/2026
 
 ### Jerarquía Tipográfica en Pantalla de Resultados
-- **Cormorant Garamond en Encabezado y Cierre**:
-  - *"Tu monto de hoy"* y *"Plegarias procesadas con éxito"* actualizadas con la fuente serif `Cormorant Garamond`.
-  - Tamaño destacado idéntico y prominente (`clamp(22px, 3.2vh, 24px)`), con peso negrita (`700`) y color azul marino (`var(--ink)`), dándoles protagonismo simétrico arriba y abajo de la lista de oraciones sin saturar el espacio.
+- **Cormorant Garamond en Encabezado y Cierre**: *"Tu monto de hoy"* y *"Plegarias procesadas con éxito"* en tamaño destacado (`22-24px`), peso negrita (`700`) y color azul marino (`var(--ink)`).
 
 ## [0.4.1] - 09/11/2026
 
