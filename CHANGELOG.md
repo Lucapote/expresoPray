@@ -1,5 +1,13 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.7.0] - 11/11/2026
+
+### Unificación y Simetría Vertical en ConsumoView
+- **Diseño 100% Vertical y Centrado**: Eliminada la barra horizontal superior izquierda (`.brand`) en `ConsumoView.jsx`, adoptando el flujo y jerarquía vertical simétrica de `ResultadoView.jsx`.
+- **Identidad Central**: Logo circular oficial ampliado a **125px** centrado sobre el título `Expresso al Cielo` (`.resultado-header.serif`) en `Playfair Display`.
+- **Estructura Compacta (`.consumo-group`)**: Las preguntas y steppers de cafés y pancitos se agruparon en columnas con `gap: 6px`, preservando los límites de altura móvil (**cero scroll**).
+- **Acciones Pinned**: Botón "Dar gracias" colocado dentro del contenedor estándar `.actions`.
+
 ## [0.6.1] - 11/11/2026
 
 ### Aumento de Tamaño y Nitidez del Logo

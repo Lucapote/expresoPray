@@ -149,7 +149,14 @@ button:focus-visible {
   -webkit-backface-visibility: hidden;
 }
 
-/* Stepper de Consumo */
+/* Stepper y Bloques de Consumo */
+.consumo-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
 .step {
   display: flex;
   align-items: center;
