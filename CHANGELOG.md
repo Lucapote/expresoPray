@@ -1,5 +1,19 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.6.0] - 11/11/2026
+
+### Migración a Playfair Display Black y Mimetización con el Logo
+- **Playfair Display Black (Peso 900)**: Sustitución de `Cormorant Garamond` por `Playfair Display` en index.html y styles.css, aplicándola con peso 900 a títulos, preguntas, números y oraciones.
+- **Paleta Cromática del Logotipo**:
+  - Tinta café espresso oscuro profundo (`#2a170a`) en lugar de azul marino.
+  - Fondo crema pergamino cálido (`#f7efe1`) y tarjetas marfil (`#fffbf4`).
+  - Acentos oro ámbar tostado (`#c9933b` / `#a87424`) y halo celeste suave (`#8fc0d5`).
+- **Visibilidad y Encuadre del Logo**:
+  - Tamaño aumentado a 68px en cabecera y 96px en la pantalla de resultados.
+  - Encuadre óptimo `object-position: 50% 28%` para centrar el rostro, las alas, la armadura y la taza del ángel en el círculo perimetral dorado.
+  - Nombre de marca en mayúsculas editoriales: `EXPRESSO AL CIELO`.
+- **Refactorización de `styles.css`**: Limpieza de reglas duplicadas y unificación de estilos conservando la ergonomía de cero scroll vertical.
+
 ## [0.5.0] - 11/11/2026
 
 ### Integración de Logo Oficial
