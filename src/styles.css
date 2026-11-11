@@ -1,38 +1,38 @@
 :root {
-  --bg: #f7efe1;
-  --sky: #8fc0d5;
-  --ink: #2a170a;
-  --muted: #6b523e;
-  --gold: #c9933b;
-  --gold-d: #a87424;
-  --card: #fffbf4;
-  --hl: rgba(201, 147, 59, 0.22);
-  --wing: #2a170a;
-  --wing-line: #f7efe1;
+  --bg: #fbf6ea;
+  --sky: #dcebf7;
+  --ink: #1f3350;
+  --muted: #3f506b;
+  --gold: #e0b04a;
+  --gold-d: #c9972b;
+  --card: #fbf6ea;
+  --hl: rgba(224, 176, 74, 0.45);
+  --wing: #1f3350;
+  --wing-line: #fbf6ea;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #1e130a;
-    --sky: #26384a;
-    --ink: #f7efe1;
-    --muted: #cfbeaf;
-    --card: #2c1a0e;
-    --hl: rgba(201, 147, 59, 0.35);
-    --wing: #f7efe1;
-    --wing-line: #26384a;
+    --bg: #14213a;
+    --sky: #1b2c4a;
+    --ink: #fbf6ea;
+    --muted: #c5d0e0;
+    --card: #22365a;
+    --hl: rgba(224, 176, 74, 0.3);
+    --wing: #fbf6ea;
+    --wing-line: #1b2c4a;
   }
 }
 
 :root[data-theme='dark'] {
-  --bg: #1e130a;
-  --sky: #26384a;
-  --ink: #f7efe1;
-  --muted: #cfbeaf;
-  --card: #2c1a0e;
-  --hl: rgba(201, 147, 59, 0.35);
-  --wing: #f7efe1;
-  --wing-line: #26384a;
+  --bg: #14213a;
+  --sky: #1b2c4a;
+  --ink: #fbf6ea;
+  --muted: #c5d0e0;
+  --card: #22365a;
+  --hl: rgba(224, 176, 74, 0.3);
+  --wing: #fbf6ea;
+  --wing-line: #1b2c4a;
 }
 
 :root {
@@ -49,14 +49,16 @@ html, body {
   font-family: 'Nunito', system-ui, sans-serif;
 }
 
+/* Tipografía de Marca y Títulos (Playfair Display) */
 h1, h2, .serif {
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 900;
+  font-weight: 500;
   margin: 0;
 }
 h2 {
-  font-size: clamp(21px, 3.1vh, 25px);
+  font-size: clamp(23px, 3.4vh, 27px);
   line-height: 1.15;
+  color: var(--ink);
 }
 .muted {
   margin: 0;
@@ -68,7 +70,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Layout */
+/* Layout y Contenedor Móvil (Cero Scroll) */
 .app {
   max-width: 420px;
   margin: 0 auto;
@@ -95,27 +97,6 @@ button:focus-visible {
   margin: calc(-1 * clamp(14px, 2.5vh, 20px)) -20px;
   padding: clamp(14px, 2.5vh, 20px) 20px;
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  align-self: flex-start;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 900;
-  font-size: 19px;
-  letter-spacing: 0.8px;
-  color: var(--ink);
-}
-.brand-logo {
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 28%;
-  border: 2.5px solid var(--gold);
-  box-shadow: 0 3px 10px rgba(42, 23, 10, 0.18);
-  background: var(--card);
-  flex-shrink: 0;
-  display: inline-block;
-}
 .mid {
   flex: 1;
   display: flex;
@@ -134,9 +115,38 @@ button:focus-visible {
   gap: 6px;
   flex-shrink: 0;
 }
-@keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
 
-/* Stepper y botones */
+/* Identidad y Logo Oficial */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-start;
+}
+.brand-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1;
+}
+.brand-logo {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid var(--gold-d);
+  box-shadow: 0 3px 10px rgba(201, 151, 43, 0.25);
+  background: #fbf5e5;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* Stepper de Consumo */
 .step {
   display: flex;
   align-items: center;
@@ -151,19 +161,21 @@ button:focus-visible {
   border: 2px solid var(--ink);
   background: transparent;
   color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.1s ease;
 }
 .step button:active { transform: scale(0.95); }
 .step button.plus {
   background: var(--ink);
-  color: #ffffff;
+  color: var(--bg);
 }
 .step output {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 900;
-  font-size: 38px;
+  font: 500 38px 'Playfair Display', serif;
   min-width: 44px;
   text-align: center;
+  color: var(--ink);
 }
 
 /* Selector de Ayuda en Exámenes */
@@ -180,17 +192,17 @@ button:focus-visible {
   cursor: pointer;
   user-select: none;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(42, 23, 10, 0.18);
+  box-shadow: 0 4px 12px rgba(31, 51, 80, 0.15);
   margin-top: 4px;
 }
 .exam-card:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(42, 23, 10, 0.24);
+  box-shadow: 0 6px 16px rgba(31, 51, 80, 0.2);
 }
 .exam-card.active {
   background: var(--gold);
   border-color: var(--gold-d);
-  box-shadow: 0 4px 14px rgba(201, 147, 59, 0.35);
+  box-shadow: 0 4px 14px rgba(201, 151, 43, 0.35);
 }
 .exam-checkbox-input {
   position: absolute;
@@ -220,8 +232,8 @@ button:focus-visible {
 }
 .exam-text {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 18px;
-  font-weight: 900;
+  font-size: 19px;
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.2;
   text-align: left;
@@ -231,6 +243,7 @@ button:focus-visible {
   color: var(--ink);
 }
 
+/* Botones de Acción Primaria y Secundaria */
 .cta {
   width: 100%;
   min-height: 48px;
@@ -238,14 +251,13 @@ button:focus-visible {
   border: 0;
   border-radius: 24px;
   background: var(--gold);
-  color: var(--ink);
+  color: #1f3350;
   font: 700 17px 'Nunito', sans-serif;
   cursor: pointer;
   transition: transform 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 8px rgba(201, 147, 59, 0.3);
 }
 .cta:active { transform: scale(0.97); }
 .ghost {
@@ -262,12 +274,24 @@ button:focus-visible {
   justify-content: center;
 }
 
-/* Alas */
+/* Alas: ciclo procedural de 3.2s */
 .wings { animation: float 3.2s cubic-bezier(0.6, 0, 0.3, 1) infinite; }
 .wings svg { overflow: visible; }
-@keyframes float { 0%, 12% { transform: translateY(0); } 50%, 62% { transform: translateY(-22px); } 100% { transform: translateY(0); } }
-@keyframes sweep { 0%, 12% { transform: rotate(var(--a0)); } 50%, 62% { transform: rotate(var(--a1)); } 100% { transform: rotate(var(--a0)); } }
-@keyframes pulse { 0%, 12% { transform: scale(0.9); opacity: 0.5; } 50%, 62% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.5; } }
+@keyframes float {
+  0%, 12% { transform: translateY(0); }
+  50%, 62% { transform: translateY(-22px); }
+  100% { transform: translateY(0); }
+}
+@keyframes sweep {
+  0%, 12% { transform: rotate(var(--a0)); }
+  50%, 62% { transform: rotate(var(--a1)); }
+  100% { transform: rotate(var(--a0)); }
+}
+@keyframes pulse {
+  0%, 12% { transform: scale(0.9); opacity: 0.5; }
+  50%, 62% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.5; }
+}
 .f {
   transform-origin: 160px 90px;
   transform: rotate(var(--a0));
@@ -277,7 +301,7 @@ button:focus-visible {
 .fe { fill: var(--wing); stroke: var(--wing-line); stroke-width: 1.4; }
 .halo { transform-origin: 160px 90px; animation: pulse 3.2s ease-in-out infinite; }
 
-/* Ruleta y progreso */
+/* Ruleta y Barra de Progreso */
 .roulette {
   position: relative;
   width: 100%;
@@ -302,12 +326,11 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 900;
-  font-size: 23px;
+  font: 500 24px 'Playfair Display', serif;
   padding: 0 10px;
   text-align: center;
   white-space: nowrap;
+  color: var(--ink);
 }
 .bar {
   width: 100%;
@@ -316,14 +339,18 @@ button:focus-visible {
   background: var(--card);
   overflow: hidden;
 }
-.bar i { display: block; height: 100%; background: var(--ink); }
+.bar i {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+}
 
-/* Pantalla de Resultados */
+/* Pantalla de Resultados y Tarjetas de Oraciones */
 .resultado-header,
 .resultado-footer {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(20px, 2.9vh, 23px);
-  font-weight: 900;
+  font-size: clamp(22px, 3.2vh, 24px);
+  font-weight: 500;
   color: var(--ink);
   margin: 0;
   line-height: 1.15;
@@ -346,7 +373,7 @@ button:focus-visible {
 }
 .oracion-btn {
   background: var(--card);
-  border: 1.5px solid var(--gold-d);
+  border: 1px solid var(--gold-d);
   border-radius: 14px;
   padding: 8px 12px;
   color: var(--ink);
@@ -356,7 +383,7 @@ button:focus-visible {
   justify-content: space-between;
   gap: 8px;
   width: 100%;
-  box-shadow: 0 2px 6px rgba(42, 23, 10, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
   transition: all 0.15s;
 }
 .oracion-btn:hover {
@@ -373,13 +400,13 @@ button:focus-visible {
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 900;
-  font-size: clamp(18px, 2.5vh, 21px);
+  font-size: clamp(20px, 2.7vh, 23px);
+  font-weight: 500;
   line-height: 1.15;
+  color: var(--ink);
 }
-.oracion-plus { font-size: 18px; opacity: 0.7; }
-.oracion-qty { font-weight: 900; }
-.oracion-name { font-weight: 900; }
+.oracion-plus { font-size: 19px; opacity: 0.7; }
+.oracion-qty, .oracion-name { font-weight: 500; }
 .oracion-pill {
   font-family: 'Nunito', sans-serif;
   font-size: 11px;
@@ -387,7 +414,7 @@ button:focus-visible {
   text-transform: uppercase;
   letter-spacing: 0.3px;
   background: var(--gold);
-  color: var(--ink);
+  color: #1f3350;
   padding: 3px 7px;
   border-radius: 8px;
   flex-shrink: 0;
@@ -402,11 +429,11 @@ button:focus-visible {
   opacity: 0.85;
 }
 
-/* Modal de Oración */
+/* Modal Devocional de Lectura */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(42, 23, 10, 0.65);
+  background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -419,14 +446,14 @@ button:focus-visible {
   position: relative;
   background: var(--bg);
   color: var(--ink);
-  border: 2.5px solid var(--gold-d);
+  border: 2px solid var(--gold-d);
   border-radius: 24px;
   padding: 28px 22px 22px;
   max-width: 390px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
-  box-shadow: 0 20px 40px rgba(42, 23, 10, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -456,7 +483,7 @@ button:focus-visible {
 .modal-badge {
   align-self: flex-start;
   background: var(--gold);
-  color: var(--ink);
+  color: #1f3350;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -465,12 +492,11 @@ button:focus-visible {
   border-radius: 12px;
 }
 .modal-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 900;
-  font-size: 24px;
+  font-size: 26px;
   margin: 0;
   line-height: 1.15;
   color: var(--ink);
+  font-weight: 500;
 }
 .modal-body {
   background: var(--card);
@@ -482,7 +508,9 @@ button:focus-visible {
 }
 .modal-body p {
   margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 18px;
+  font-weight: 400;
   line-height: 1.55;
   font-style: italic;
   color: var(--ink);

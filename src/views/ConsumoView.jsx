@@ -4,9 +4,9 @@ import Stepper from '../components/Stepper.jsx';
 export default function ConsumoView({ consumo, onChange, onSubmit }) {
   return (
     <section className="view">
-      <div className="brand serif">
-        <Logo size={68} />
-        <span>EXPRESSO AL CIELO</span>
+      <div className="brand">
+        <Logo size={54} />
+        <span className="brand-title">EXPRESSO AL CIELO</span>
       </div>
 
       <div className="mid">

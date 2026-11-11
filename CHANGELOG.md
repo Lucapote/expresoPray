@@ -2,35 +2,31 @@
 
 ## [0.6.0] - 11/11/2026
 
-### Migración a Playfair Display Black y Mimetización con el Logo
-- **Playfair Display Black (Peso 900)**: Sustitución de `Cormorant Garamond` por `Playfair Display` en index.html y styles.css, aplicándola con peso 900 a títulos, preguntas, números y oraciones.
-- **Paleta Cromática del Logotipo**:
-  - Tinta café espresso oscuro profundo (`#2a170a`) en lugar de azul marino.
-  - Fondo crema pergamino cálido (`#f7efe1`) y tarjetas marfil (`#fffbf4`).
-  - Acentos oro ámbar tostado (`#c9933b` / `#a87424`) y halo celeste suave (`#8fc0d5`).
-- **Visibilidad y Encuadre del Logo**:
-  - Tamaño aumentado a 68px en cabecera y 96px en la pantalla de resultados.
-  - Encuadre óptimo `object-position: 50% 28%` para centrar el rostro, las alas, la armadura y la taza del ángel en el círculo perimetral dorado.
-  - Nombre de marca en mayúsculas editoriales: `EXPRESSO AL CIELO`.
-- **Refactorización de `styles.css`**: Limpieza de reglas duplicadas y unificación de estilos conservando la ergonomía de cero scroll vertical.
+### Migración a Playfair Display y Optimización CSS
+- **Tipografía Playfair Display**:
+  - Reemplazo completo de `Cormorant Garamond` por `Playfair Display`.
+  - **Navbar**: *"EXPRESSO AL CIELO"* en mayúsculas con `Playfair Display Black` (peso 900) e interletraje (`0.05em`) imitando el logotipo oficial.
+  - **Textos fuera del Navbar**: Preguntas, títulos de resultado, oraciones y números configurados en **`Playfair Display Medium (500)`** en color azul marino (`var(--ink)`), evitando peso bold para garantizar descanso visual y sofisticación editorial.
+- **Mayor Visibilidad del Logotipo**:
+  - Aumentadas las dimensiones a 54px en cabecera y 80px en resultados, con marco refinado que permite apreciar la espada y la taza de café sin recortes agresivos.
+- **Optimización y Refactorización de `styles.css`**:
+  - Código modular, limpio y DRY, eliminando duplicidades y preservando la arquitectura de cero scroll.
 
 ## [0.5.0] - 11/11/2026
 
 ### Integración de Logo Oficial
-- **Reemplazo en `Logo.jsx`**: Incorporación de `public/logo.webp` en sustitución del marcador SVG provisional.
-- **Enmarcado Circular con Aro Dorado**: Estilo `.brand-logo` con `border-radius: 50%`, `object-fit: cover`, borde perimetral dorado (`border: 2px solid var(--gold-d)`) y leve sombra de realce.
-- **Favicon**: Añadido enlace a `/logo.webp` en `index.html`.
+- Reemplazo en `Logo.jsx` de SVG provisional por `logo.webp`.
+- Enmarcado circular con aro dorado y favicon en `index.html`.
 
 ## [0.4.2] - 09/11/2026
 
 ### Jerarquía Tipográfica en Pantalla de Resultados
-- **Cormorant Garamond en Encabezado y Cierre**: *"Tu monto de hoy"* y *"Plegarias procesadas con éxito"* en tamaño destacado (`22-24px`), peso negrita (`700`) y color azul marino (`var(--ink)`).
+- Títulos de resultado destacados en azul marino.
 
 ## [0.4.1] - 09/11/2026
 
 ### Mejoras Visuales en Selector de Exámenes
-- Color azul inicial (`var(--ink)`) con letras blancas en `Cormorant Garamond`.
-- Estado activo dorado con tilde blanco.
+- Color azul inicial (`var(--ink)`) con letras blancas y estado activo dorado con tilde blanco.
 
 ## [0.4.0] - 09/11/2026
 
@@ -42,7 +38,6 @@
 ### Mejoras de Diseño y Ergonomía (Zero-Scroll & Armonización Tipográfica)
 - Cero scroll global en `height: 100dvh` y `overflow: hidden`.
 - Tarjetas de oración de fila única compactas con botón "Leer 📖".
-- Armonización de tipografías con escalas fluidas `clamp(...)`.
 
 ## [0.2.0] - 08/11/2026
 

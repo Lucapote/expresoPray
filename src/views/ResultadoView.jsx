@@ -24,7 +24,7 @@ export default function ResultadoView({ lines, onRestart }) {
   return (
     <section className="view">
       <div className="mid">
-        <Logo size={96} />
+        <Logo size={80} />
         <h2 className="resultado-header serif">Tu monto de hoy</h2>
         <div className="monto-wrapper" ref={titleRef} tabIndex={-1}>
           <div className="oracion-list">
