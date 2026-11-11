@@ -5,29 +5,35 @@ export default function ConsumoView({ consumo, onChange, onSubmit }) {
   return (
     <section className="view">
       <div className="mid">
-        <Logo size={125} />
-        <h2 className="resultado-header serif">Expresso al Cielo</h2>
-
-        <div className="consumo-group">
-          <h2 id="q-cafes">¿Cuántos cafés te tomaste hoy?</h2>
-          <Stepper
-            labelId="q-cafes"
-            noun="cafés"
-            min={1}
-            value={Math.max(1, consumo.cafes)}
-            onChange={(cafes) => onChange({ ...consumo, cafes: Math.max(1, cafes) })}
-          />
+        <div className="consumo-hero">
+          <Logo size={120} />
+          <h1 className="consumo-title">EXPRESSO AL CIELO</h1>
         </div>
 
-        <div className="consumo-group">
-          <h2 id="q-pancitos">¿Cuántos pancitos comiste?</h2>
-          <Stepper
-            labelId="q-pancitos"
-            noun="pancitos"
-            min={0}
-            value={consumo.pancitos}
-            onChange={(pancitos) => onChange({ ...consumo, pancitos })}
-          />
+        <div className="consumo-card">
+          <div className="consumo-group">
+            <h2 id="q-cafes">¿Cuántos cafés te tomaste hoy?</h2>
+            <Stepper
+              labelId="q-cafes"
+              noun="cafés"
+              min={1}
+              value={Math.max(1, consumo.cafes)}
+              onChange={(cafes) => onChange({ ...consumo, cafes: Math.max(1, cafes) })}
+            />
+          </div>
+
+          <div className="consumo-divider" aria-hidden="true" />
+
+          <div className="consumo-group">
+            <h2 id="q-pancitos">¿Cuántos pancitos comiste?</h2>
+            <Stepper
+              labelId="q-pancitos"
+              noun="pancitos"
+              min={0}
+              value={consumo.pancitos}
+              onChange={(pancitos) => onChange({ ...consumo, pancitos })}
+            />
+          </div>
         </div>
 
         <label className={`exam-card${consumo.ayudaExamenes ? ' active' : ''}`}>

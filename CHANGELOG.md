@@ -1,5 +1,12 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.7.1] - 11/11/2026
+
+### Respiro Visual y Tarjeta Devocional en ConsumoView
+- **Bloque de Marca Hero (`.consumo-hero`)**: Logo de 120px integrado con el rótulo oficial `EXPRESSO AL CIELO` en mayúsculas con espaciado (`letter-spacing: 0.08em; font-weight: 900`), distinguiendo con claridad la identidad de la marca frente a las preguntas interactivas.
+- **Tarjeta Contenedora Devocional (`.consumo-card`)**: Enmarcado armónico para los selectores de cafés y pancitos sobre superficie devocional con borde dorado sutil (`1px solid var(--gold-d)`), sombra ligera y divisor degradado (`.consumo-divider`), generando un respiro inmediato y evitando la colisión visual de títulos.
+- **Alineación de Ancho**: Normalizado el ancho máximo a `370px` tanto para `.consumo-card` como para `.exam-card`, en perfecta consonancia con `.oracion-list` en la vista de resultados.
+
 ## [0.7.0] - 11/11/2026
 
 ### Unificación y Simetría Vertical en ConsumoView
