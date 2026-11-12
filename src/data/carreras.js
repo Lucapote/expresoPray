@@ -84,3 +84,4 @@ export const AREA_POR_CARRERA = AREAS_ACADEMICAS.reduce((acc, cat) => {
   });
   return acc;
 }, {});
+
