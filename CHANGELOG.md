@@ -1,5 +1,11 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.7.2] - 11/11/2026
+
+### Catálogo de Carreras y Áreas de Anáhuac Cancún
+- **Nuevo Catálogo Declarativo (`src/data/carreras.js`)**: Creado el archivo de datos estáticos con todas las carreras de la Universidad Anáhuac Cancún organizadas por división: *Ingenierías, Ciencias Sociales, Ciencias de la Salud, Negocios, Hospitality and Leisure, Licenciaturas en Inglés, y Arte, Diseño y Comunicación*.
+- **Estructura Flexible**: Exporta `AREAS_ACADEMICAS` para selectores con `<optgroup>`, `TODAS_LAS_CARRERAS` para búsquedas/autocompletados y `AREA_POR_CARRERA` para métricas o marcadores en vivo de la pastoral.
+
 ## [0.7.1] - 11/11/2026
 
 ### Respiro Visual y Tarjeta Devocional en ConsumoView
