@@ -1,5 +1,11 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.7.7] - 11/11/2026
+
+### Arquitectura Limpia y Desacoplada del Modal de Oraciones
+- **Desacoplamiento Total de `OracionModal.jsx`**: Erradicada la manipulación de historial (`window.history.back` y `pushState`) del modal hijo y eliminados los efectos colaterales de desmontaje (`cleanup`) que causaban cierres prematuros por eventos `popstate` desfasados.
+- **Navegación Centralizada en `ResultadoView.jsx`**: Centralizado el ciclo de vida del modal en el componente padre (`handleOpenOracion`, `handleCloseOracion` y listener global de `popstate`), garantizando que la apertura, cierre y marcado como `Rezada ✓` funcione de manera fluida y determinista en cualquier orden y secuencia.
+
 ## [0.7.6] - 11/11/2026
 
 ### Corrección de Ciclo de Vida y Flujo Consecutivo de Oraciones

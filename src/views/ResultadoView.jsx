@@ -13,6 +13,31 @@ export default function ResultadoView({ lines, onRestart }) {
     titleRef.current?.focus();
   }, []);
 
+  // Control centralizado del botón "Atrás" del móvil
+  useEffect(() => {
+    const onPopState = () => {
+      setSelectedOracion(null);
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  const handleOpenOracion = (item) => {
+    window.history.pushState({ modalOpen: true }, '');
+    setSelectedOracion({ key: item.label, qty: item.qty });
+  };
+
+  const handleCloseOracion = () => {
+    setSelectedOracion(null);
+    if (window.history.state?.modalOpen) {
+      window.history.back();
+    }
+  };
+
+  const handleCompleteOracion = (key) => {
+    setRezadas((prev) => ({ ...prev, [key]: true }));
+  };
+
   const handleReview = () => {
     if (REVIEW_URL) {
       window.open(REVIEW_URL, '_blank', 'noopener');
@@ -34,7 +59,7 @@ export default function ResultadoView({ lines, onRestart }) {
                 key={l.label}
                 type="button"
                 className="oracion-btn serif"
-                onClick={() => setSelectedOracion({ key: l.label, qty: l.qty })}
+                onClick={() => handleOpenOracion(l)}
                 title={`Toca para leer la oración de ${l.label}`}
               >
                 <div className="oracion-left">
@@ -71,8 +96,8 @@ export default function ResultadoView({ lines, onRestart }) {
         <OracionModal
           oracionKey={selectedOracion.key}
           qty={selectedOracion.qty}
-          onClose={() => setSelectedOracion(null)}
-          onComplete={(key) => setRezadas((prev) => ({ ...prev, [key]: true }))}
+          onClose={handleCloseOracion}
+          onComplete={handleCompleteOracion}
         />
       )}
     </section>
