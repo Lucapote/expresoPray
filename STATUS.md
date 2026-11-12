@@ -4,18 +4,17 @@
 
 ## 1. Foto Actual
 - Proyecto Vite + React (`expresso-pray`).
+- **Eliminación de Selección Celeste Móvil (Tap Highlight & Selection)**:
+  - Desactivado el recuadro celeste nativo de Chrome/Android con `-webkit-tap-highlight-color: transparent` a nivel global y en controles interactivos.
+  - Bloqueada la selección accidental de texto en toques repetitivos con `user-select: none`, `-webkit-user-select: none` y `-webkit-touch-callout: none`.
+  - Anulados outlines en foco táctil de `.exam-card` y botones.
 - **Repositorio Remoto GitHub Conectado y Sincronizado**:
-  - Vinculado a `https://github.com/Lucapote/expresoPray.git`.
-  - Rama `master` publicada y sincronizada con el origen remoto.
-- **Catálogo de Carreras y Áreas Académicas Integrado**:
-  - `src/data/carreras.js` listo con las 36 carreras de la Universidad Anáhuac Cancún agrupadas por facultad.
-- **ConsumoView & ResultadoView**:
-  - Tarjeta contenedora devocional con respiro visual y cero scroll móvil.
+  - `https://github.com/Lucapote/expresoPray.git`.
 - Compilación de producción limpia y verificada (`npm run build`).
 
 ## 2. En qué estamos trabajando ahora
-- Repositorio respaldado en GitHub. Listos para definir la captura de datos (estudiantes/carreras/backend).
+- Verificación del comportamiento táctil nativo sin recuadros de selección en dispositivos móviles.
 
 ## 3. Próximos Pasos Inmediatos
-1. Diseñar el flujo de captura o selección de carrera en la experiencia del usuario.
+1. Probar en el teléfono móvil que el botón de exámenes y los steppers respondan con pulsación limpia sin sombras ni selecciones celestes.
 

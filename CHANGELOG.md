@@ -1,5 +1,12 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.7.4] - 11/11/2026
+
+### Erradicación de Selección Celeste y Tap Highlight Móvil
+- **Desactivación de Tap Highlight**: Añadido `-webkit-tap-highlight-color: transparent` globalmente en `*`, `html`, `body` y elementos interactivos para erradicar el recuadro celeste por defecto de los navegadores móviles (Android Chrome / WebKit).
+- **Protección contra Selección Accidental**: Aplicado `user-select: none`, `-webkit-user-select: none` y `-webkit-touch-callout: none` en `.exam-card`, `.step button`, `.oracion-btn` y botones para prevenir que toques prolongados o dobles toques resalten el texto como seleccionado.
+- **Limpieza de Focus Táctil**: Anulados los bordes y outlines azules del navegador en `.exam-card:focus` y `button:focus:not(:focus-visible)`.
+
 ## [0.7.3] - 11/11/2026
 
 ### Vinculación y Sincronización con GitHub
