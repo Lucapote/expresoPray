@@ -11,30 +11,6 @@
   --wing-line: #fbf6ea;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --bg: #14213a;
-    --sky: #1b2c4a;
-    --ink: #fbf6ea;
-    --muted: #c5d0e0;
-    --card: #22365a;
-    --hl: rgba(224, 176, 74, 0.3);
-    --wing: #fbf6ea;
-    --wing-line: #1b2c4a;
-  }
-}
-
-:root[data-theme='dark'] {
-  --bg: #14213a;
-  --sky: #1b2c4a;
-  --ink: #fbf6ea;
-  --muted: #c5d0e0;
-  --card: #22365a;
-  --hl: rgba(224, 176, 74, 0.3);
-  --wing: #fbf6ea;
-  --wing-line: #1b2c4a;
-}
-
 :root {
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
@@ -477,7 +453,6 @@ button, label, .exam-card, .oracion-btn, .step button {
   line-height: 1.15;
   color: var(--ink);
 }
-.oracion-plus { font-size: 19px; opacity: 0.7; }
 .oracion-qty, .oracion-name { font-weight: 500; }
 .oracion-pill {
   font-family: 'Nunito', sans-serif;
@@ -493,6 +468,12 @@ button, label, .exam-card, .oracion-btn, .step button {
   display: inline-flex;
   align-items: center;
   gap: 3px;
+  transition: all 0.2s ease;
+}
+.oracion-pill--done {
+  background: var(--gold-d);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(201, 151, 43, 0.35);
 }
 .oracion-hint {
   margin: 0;

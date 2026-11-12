@@ -4,17 +4,18 @@
 
 ## 1. Foto Actual
 - Proyecto Vite + React (`expresso-pray`).
-- **Eliminación de Selección Celeste Móvil (Tap Highlight & Selection)**:
-  - Desactivado el recuadro celeste nativo de Chrome/Android con `-webkit-tap-highlight-color: transparent` a nivel global y en controles interactivos.
-  - Bloqueada la selección accidental de texto en toques repetitivos con `user-select: none`, `-webkit-user-select: none` y `-webkit-touch-callout: none`.
-  - Anulados outlines en foco táctil de `.exam-card` y botones.
+- **Mejoras Devocionales, Navegación Modal y Unificación de Tema**:
+  - Eliminado el prefijo `+` en la lista de oraciones de [`ResultadoView.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/views/ResultadoView.jsx).
+  - Integrado manejo del botón "Atrás" del sistema en móviles (`popstate`) dentro de [`OracionModal.jsx`](file:///c:/Users/ASUS/OneDrive/Escritorio/Proyectos/expresso-pray/src/components/OracionModal.jsx) para cerrar el modal sin abandonar la aplicación.
+  - Al presionar "Hecho" en el modal, la oración se marca con la píldora dorada `Rezada ✓` (`.oracion-pill--done`).
+  - Erradicado el Dark Mode: eliminados estilos de tema oscuro y agregado `<meta name="color-scheme" content="light" />` en `index.html`.
 - **Repositorio Remoto GitHub Conectado y Sincronizado**:
   - `https://github.com/Lucapote/expresoPray.git`.
 - Compilación de producción limpia y verificada (`npm run build`).
 
 ## 2. En qué estamos trabajando ahora
-- Verificación del comportamiento táctil nativo sin recuadros de selección en dispositivos móviles.
+- Validación visual de las oraciones sin `+`, el marcado de completado `Rezada ✓` y la navegación móvil.
 
 ## 3. Próximos Pasos Inmediatos
-1. Probar en el teléfono móvil que el botón de exámenes y los steppers respondan con pulsación limpia sin sombras ni selecciones celestes.
+1. El usuario validará en su móvil la navegación con el botón "Atrás" y la consistencia en modo claro permanente.
 

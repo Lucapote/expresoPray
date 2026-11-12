@@ -1,5 +1,13 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.7.5] - 11/11/2026
+
+### Mejoras en Oraciones, Navegación Modal y Erradicación de Dark Mode
+- **Eliminación del signo `+`**: Retirado el prefijo `+` en las oraciones de la pantalla de resultados para una lectura más limpia y devocional.
+- **Navegación Móvil Nativa con Popstate**: Implementado control de historial (`window.history.pushState` y evento `popstate`) en `OracionModal.jsx`, permitiendo que el botón "Atrás" o gesto del móvil cierre el modal sin expulsar al usuario del sitio.
+- **Estado de Oración `Rezada ✓`**: Agregado callback `onComplete` para marcar las oraciones leídas con una píldora dorada destacada (`.oracion-pill--done`).
+- **Tema Claro Permanente (Cero Dark Mode)**: Eliminadas las consultas de medios `@media (prefers-color-scheme: dark)` y selectores oscuros en `styles.css`. Añadido `<meta name="color-scheme" content="light" />` en `index.html` para garantizar consistencia visual sacral en cualquier dispositivo.
+
 ## [0.7.4] - 11/11/2026
 
 ### Erradicación de Selección Celeste y Tap Highlight Móvil

@@ -7,6 +7,7 @@ export default function ResultadoView({ lines, onRestart }) {
   const titleRef = useRef(null);
   const [toast, setToast] = useState(false);
   const [selectedOracion, setSelectedOracion] = useState(null);
+  const [rezadas, setRezadas] = useState({});
 
   useEffect(() => {
     titleRef.current?.focus();
@@ -28,7 +29,7 @@ export default function ResultadoView({ lines, onRestart }) {
         <h2 className="resultado-header serif">Tu monto de hoy</h2>
         <div className="monto-wrapper" ref={titleRef} tabIndex={-1}>
           <div className="oracion-list">
-            {lines.map((l, i) => (
+            {lines.map((l) => (
               <button
                 key={l.label}
                 type="button"
@@ -37,11 +38,14 @@ export default function ResultadoView({ lines, onRestart }) {
                 title={`Toca para leer la oración de ${l.label}`}
               >
                 <div className="oracion-left">
-                  {i > 0 && <span className="oracion-plus">+ </span>}
                   <span className="oracion-qty">{l.qty}</span>
                   <span className="oracion-name">{l.label}</span>
                 </div>
-                <span className="oracion-pill">Leer 📖</span>
+                {rezadas[l.label] ? (
+                  <span className="oracion-pill oracion-pill--done">Rezada ✓</span>
+                ) : (
+                  <span className="oracion-pill">Leer 📖</span>
+                )}
               </button>
             ))}
           </div>
@@ -67,6 +71,7 @@ export default function ResultadoView({ lines, onRestart }) {
         oracionKey={selectedOracion?.key}
         qty={selectedOracion?.qty}
         onClose={() => setSelectedOracion(null)}
+        onComplete={(key) => setRezadas((prev) => ({ ...prev, [key]: true }))}
       />
     </section>
   );
