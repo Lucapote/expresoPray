@@ -1,5 +1,12 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.7.6] - 11/11/2026
+
+### Corrección de Ciclo de Vida y Flujo Consecutivo de Oraciones
+- **Montaje Condicional Limpio**: Corregido `ResultadoView.jsx` para renderizar `OracionModal` únicamente cuando `selectedOracion` no sea nulo (`{selectedOracion && ...}`). Esto garantiza que cada apertura cree una instancia fresca e independiente.
+- **Limpieza Automática de Historial (`popstate`)**: Simplificado el manejo del botón "Atrás" en `OracionModal.jsx`; si el modal se cierra mediante el botón "Hecho" o la `✕`, el historial de navegación se limpia limpiamente en el desmontaje (`useEffect cleanup`) sin bloquear llamadas posteriores.
+- **Completado Múltiple Habilitado**: Resuelto el fallo donde la segunda oración no respondía al botón "Hecho", permitiendo completar todas las oraciones de la lista de forma fluida.
+
 ## [0.7.5] - 11/11/2026
 
 ### Mejoras en Oraciones, Navegación Modal y Erradicación de Dark Mode

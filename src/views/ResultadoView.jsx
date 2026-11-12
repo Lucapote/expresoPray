@@ -67,12 +67,14 @@ export default function ResultadoView({ lines, onRestart }) {
         {toast ? 'Pronto: acá irá el link a la reseña' : ''}
       </div>
 
-      <OracionModal
-        oracionKey={selectedOracion?.key}
-        qty={selectedOracion?.qty}
-        onClose={() => setSelectedOracion(null)}
-        onComplete={(key) => setRezadas((prev) => ({ ...prev, [key]: true }))}
-      />
+      {selectedOracion && (
+        <OracionModal
+          oracionKey={selectedOracion.key}
+          qty={selectedOracion.qty}
+          onClose={() => setSelectedOracion(null)}
+          onComplete={(key) => setRezadas((prev) => ({ ...prev, [key]: true }))}
+        />
+      )}
     </section>
   );
 }

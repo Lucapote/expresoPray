@@ -2,44 +2,40 @@ import { useEffect, useRef } from 'react';
 import { ORACIONES } from '../data/oraciones.js';
 
 export default function OracionModal({ oracionKey, qty = 1, onClose, onComplete }) {
-  const isClosingRef = useRef(false);
+  const closedByPopState = useRef(false);
 
   useEffect(() => {
-    if (!oracionKey) return;
-
-    // Registrar estado en el historial para capturar el botón "Atrás" del móvil
-    window.history.pushState({ oracionModalOpen: true }, '');
+    // Insertar un estado temporal en el historial para interceptar el botón "Atrás" del móvil
+    window.history.pushState({ modalOpen: true }, '');
 
     const handlePopState = () => {
-      if (!isClosingRef.current) {
-        isClosingRef.current = true;
+      closedByPopState.current = true;
+      onClose();
+    };
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
         onClose();
       }
     };
 
-    const onKey = (e) => {
-      if (e.key === 'Escape') {
-        handleDismiss();
-      }
-    };
-
     window.addEventListener('popstate', handlePopState);
-    window.addEventListener('keydown', onKey);
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
       window.removeEventListener('popstate', handlePopState);
-      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('keydown', handleKeyDown);
+
+      // Si el modal se desmontó por clic manual y no por "Atrás", limpiar el historial
+      if (!closedByPopState.current && window.history.state?.modalOpen) {
+        window.history.back();
+      }
     };
-  }, [oracionKey]);
+  }, [onClose]);
 
   if (!oracionKey) return null;
 
   const handleDismiss = () => {
-    if (isClosingRef.current) return;
-    isClosingRef.current = true;
-    if (window.history.state?.oracionModalOpen) {
-      window.history.back();
-    }
     onClose();
   };
 
@@ -47,7 +43,7 @@ export default function OracionModal({ oracionKey, qty = 1, onClose, onComplete 
     if (onComplete) {
       onComplete(oracionKey);
     }
-    handleDismiss();
+    onClose();
   };
 
   const data = ORACIONES[oracionKey] || {
