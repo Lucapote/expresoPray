@@ -1,5 +1,11 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.7.3] - 11/11/2026
+
+### Vinculación y Sincronización con GitHub
+- **Repositorio Remoto Configurado**: Vinculado `origin` a `https://github.com/Lucapote/expresoPray.git`.
+- **Publicación de Rama**: Desplegada la rama `master` al repositorio remoto de GitHub con todo el historial de commits acumulado.
+
 ## [0.7.2] - 11/11/2026
 
 ### Catálogo de Carreras y Áreas de Anáhuac Cancún
