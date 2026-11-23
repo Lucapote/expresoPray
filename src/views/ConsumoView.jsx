@@ -12,7 +12,7 @@ export default function ConsumoView({ consumo, onChange, onSubmit }) {
 
         <div className="consumo-card">
           <div className="consumo-group">
-            <h2 id="q-cafes">¿Cuántos cafés te tomaste hoy?</h2>
+            <h2 id="q-cafes">¿Cuántos cafés tomaste hoy?</h2>
             <Stepper
               labelId="q-cafes"
               noun="cafés"

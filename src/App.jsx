@@ -20,7 +20,13 @@ export default function App() {
         <ConsumoView consumo={consumo} onChange={setConsumo} onSubmit={handleDarGracias} />
       )}
       {view === 'carga' && <CargaView target={monto.target} onDone={() => setView('resultado')} />}
-      {view === 'resultado' && <ResultadoView lines={monto.lines} onRestart={() => setView('consumo')} />}
+      {view === 'resultado' && (
+        <ResultadoView
+          lines={monto.lines}
+          consumo={consumo}
+          onRestart={() => setView('consumo')}
+        />
+      )}
     </main>
   );
 }

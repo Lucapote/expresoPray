@@ -1,5 +1,17 @@
 # Historial de Cambios (CHANGELOG.md)
 
+## [0.8.0] - 12/11/2026
+
+### Registro No Invasivo, Gamificación Devocional y Estandarización Visual
+- **Persistencia Reactiva (`src/hooks/useEstudiante.js`)**: Guardado automático del perfil de estudiante (teléfono, nombre, carrera, área académica, email) en `localStorage` (`expresso_estudiante`), permitiendo reconocimiento instantáneo sin contraseña.
+- **Modal de Registro Rápido (`src/components/RegistroModal.jsx`)**: Formulario sin contraseña con teclado numérico para teléfono (10 dígitos), nombre, selector de carreras agrupado por áreas de Anáhuac Cancún y correo opcional.
+- **Ventana Gamificable Simple (`src/components/GamificacionModal.jsx`)**: Pantalla devocional con la métrica personal *"Estás X oraciones más cerca del cielo"*, Top de áreas académicas con barras de progreso en vivo y botón para unirse a la Comunidad de WhatsApp de la Pastoral Universitaria. Limpieza del recuadro de slogan removiendo menciones redundantes de carrera.
+- **Ranking Inicializado en Cero (`src/services/pastoralService.js`)**: Los valores precargados de muestra fueron reseteados a 0 para que todas las carreras inicien limpias desde el principio.
+- **Estandarización de Botones Inferiores (`src/styles.css`)**: Estandarizados los botones de acción inferior a ancho 100% (máx 370px), altura de 48px, curvatura de 24px y tipografía uniforme (`Nunito` 700, 16px).
+- **Suma Reactiva de Oraciones Rezadas (`src/views/ResultadoView.jsx`)**: El marcador acumula **únicamente** las oraciones que el estudiante marca como `Rezada ✓` en tiempo real, garantizando que el impacto espiritual refleje oraciones realmente rezadas.
+- **Capa de Servicios y Endpoints (`src/services/pastoralService.js`, `api/ofrendas.js`, `api/ranking.js`)**: Comunicación desacoplada lista para Supabase en Vercel con respaldo local automático en `localStorage`.
+- **Unificación de Ramas**: Fusión completa de `feat/registro-gamificacion` a `master` y despliegue a producción.
+
 ## [0.7.7] - 11/11/2026
 
 ### Arquitectura Limpia y Desacoplada del Modal de Oraciones
